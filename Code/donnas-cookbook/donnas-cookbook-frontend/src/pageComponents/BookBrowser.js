@@ -1,7 +1,7 @@
 function BookBrowser () {
     return (
         <div>
-            
+            Book Browser
         </div>
     )
 }
