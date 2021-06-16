@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import IngredientAdder from './IngredientAdder.js'
+import RecipeDraft from './RecipeDraft.js'
 
 function RecipeMaker ({API}) {
 
@@ -6,13 +8,14 @@ const [recipeTitle, setRecipeTitle] = useState("")
 
 const [newIngInput, setNewIngInput] = useState(false)
 
+const recipe 
 
 // This page should live update onto what looks like a page in a recipe book
 
 
 function handleNewIngButton (e) {
 e.preventDefault()
-setNewIngInput(true)
+setNewIngInput(!newIngInput)
 }
 
 function handleRecipeTitle (e) {
@@ -29,10 +32,14 @@ function handleRecipeTitle (e) {
                     <input type='text' value = {recipeTitle} onChange={handleRecipeTitle} />
                 </label>
                 <br />
-                <button>
-                    New Ingredient
+                <button onClick = {handleNewIngButton}>
+                    {!newIngInput ? 'New Ingredient' : 'Hide Form' }
                 </button>
+                <br />
+                {newIngInput ? <IngredientAdder /> : null}
             </form>
+
+            <RecipeDraft />
         </div>
     )
 }
