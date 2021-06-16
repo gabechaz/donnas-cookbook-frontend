@@ -1,9 +1,9 @@
 function RecipeDraft ({recipeTitle}) {
 
-    
+
 
     return (
-        <h3>Recipe Title</h3>
+        <h3>{recipeTitle}</h3>
     )
 }
 

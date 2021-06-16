@@ -4,11 +4,10 @@ import RecipeDraft from './RecipeDraft.js'
 
 function RecipeMaker ({API}) {
 
-const [recipeTitle, setRecipeTitle] = useState("")
 
 const [newIngInput, setNewIngInput] = useState(false)
 
-const recipe 
+const [recipeTitle, setRecipeTitle] = useState("Recipe Title") 
 
 // This page should live update onto what looks like a page in a recipe book
 
@@ -39,7 +38,7 @@ function handleRecipeTitle (e) {
                 {newIngInput ? <IngredientAdder /> : null}
             </form>
 
-            <RecipeDraft />
+            <RecipeDraft recipeTitle={recipeTitle} />
         </div>
     )
 }
