@@ -3,7 +3,18 @@ import {useState} from 'react'
 
 
 
-function IngredientAdder ({API}) {
+// fetch(`${API}/foods`, {
+//     method: "POST",
+//     headers: {
+//         "content-type": "application/json"
+//     }, 
+//     body: JSON.stringify(newIng)
+// })
+// .then(res => res.json())
+// .then(ing => console.log(ing))
+
+
+function IngredientAdder ({API, ingList, setIngList}) {
 
     const [newIng, setNewIng] = useState("")
 
@@ -13,15 +24,8 @@ function IngredientAdder ({API}) {
 
     function handleNewIngSubmit (e) {
         e.preventDefault()
-        fetch(`${API}/foods`, {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            }, 
-            body: JSON.stringify(newIng)
-        })
-        .then(res => res.json())
-        .then(ing => console.log(ing))
+        setIngList(...ingList, newIng.name)
+
     }
 
 

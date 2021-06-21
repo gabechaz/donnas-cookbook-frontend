@@ -37,10 +37,10 @@ const [ingList, setIngList] = useState([])
                     {!newIngInput ? 'New Ingredient' : 'Hide Form' }
                 </button>
                 <br />
-                {newIngInput ? <IngredientAdder /> : null}
+                {newIngInput ? <IngredientAdder ingList={ingList} setIngList={setIngList} /> : null}
             </form>
 
-            <RecipeDraft recipeTitle={recipeTitle} />
+            <RecipeDraft ingList={ingList} recipeTitle={recipeTitle} />
         </div>
     )
 }
