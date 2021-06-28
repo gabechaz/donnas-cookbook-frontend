@@ -32,6 +32,7 @@ const [ingList, setIngList] = useState([{name: "Put Ingredients Here"}])
                     Recipe Title:
                     <input type='text' value = {recipeTitle} onChange={handleRecipeTitle} />
                 </label>
+                
                 <br />
                 <button onClick = {handleNewIngButton}>
                     {!newIngInput ? 'New Ingredient' : 'Hide Form' }

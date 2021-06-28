@@ -1,10 +1,20 @@
+import {useEffect, useState} from 'react'
+
+
 function RecipeDraft ({recipeTitle, ingList}) {
 
-    const ingsList = ingList.map(ing => {
-        return (
-            <li>{ing.name}</li>
-        )
-    })
+    const [ingsList, setIngsList] = []
+
+    useEffect ( () => {
+        const ingsList = ingList.map(ing => {
+            return (
+                <li>{ing.name}</li>
+            )
+        })
+    }
+        , [ingList]
+    )
+
 
 
     return (
