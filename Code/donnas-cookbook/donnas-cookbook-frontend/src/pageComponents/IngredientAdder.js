@@ -16,6 +16,8 @@ import {useState} from 'react'
 
 function IngredientAdder ({API, ingList, setIngList}) {
 
+    console.log(ingList)
+
     const [newIng, setNewIng] = useState("")
 
     function handleNewIng (e) {
@@ -24,7 +26,11 @@ function IngredientAdder ({API, ingList, setIngList}) {
 
     function handleNewIngSubmit (e) {
         e.preventDefault()
-        setIngList(...ingList, newIng.name)
+        let newIngList = ingList
+        console.log(newIngList)
+        newIngList.push(newIng)
+        setIngList(newIngList)
+        console.log(ingList)
 
     }
 

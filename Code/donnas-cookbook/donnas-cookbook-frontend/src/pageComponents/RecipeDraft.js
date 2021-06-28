@@ -2,7 +2,7 @@ function RecipeDraft ({recipeTitle, ingList}) {
 
     const ingsList = ingList.map(ing => {
         return (
-            <li>ing.name</li>
+            <li>{ing.name}</li>
         )
     })
 
