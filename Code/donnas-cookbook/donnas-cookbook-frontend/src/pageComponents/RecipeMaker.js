@@ -22,7 +22,7 @@ function handleRecipeTitle (e) {
     setRecipeTitle(e.target.value)
 }
 
-const [ingList, setIngList] = useState([{name: "Put Ingredients Here"}])
+const [ingList, setIngList] = useState([<li>Enter Ingredients Here</li>])
 
     return (
         <div>

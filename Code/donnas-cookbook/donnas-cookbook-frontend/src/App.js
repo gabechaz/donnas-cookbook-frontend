@@ -30,7 +30,7 @@ const API = 'http://localhost:3000/'
 
 
       <Route path="/books" exact>
-          <BookBrowser />
+          <BookBrowser API={API} />
       </Route>
    
       <Route path="/users/:id" exact>
