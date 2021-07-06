@@ -1,9 +1,13 @@
 import {useEffect, useState} from 'react'
 
 
-function RecipeDraft ({recipeTitle, ingList}) {
+function RecipeDraft ({recipeTitle, ingList, newIng}) {
 
     const [ingsList, setIngsList] = []
+
+
+   
+    
 
     useEffect ( () => {
         const ingsList = ingList.map(ing => {
@@ -24,6 +28,7 @@ function RecipeDraft ({recipeTitle, ingList}) {
             <ul>
             {ingsList}
             </ul>
+            <li>{newIng}</li>
         </div>
             
         

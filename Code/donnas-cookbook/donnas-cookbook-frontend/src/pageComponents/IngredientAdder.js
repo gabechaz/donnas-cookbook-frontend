@@ -14,11 +14,10 @@ import {useState} from 'react'
 // .then(ing => console.log(ing))
 
 
-function IngredientAdder ({API, ingList, setIngList}) {
+function IngredientAdder ({API, ingList, setIngList, newIng, setNewIng}) {
 
     console.log(ingList)
 
-    const [newIng, setNewIng] = useState("")
 
     function handleNewIng (e) {
         setNewIng({name: e.target.value})

@@ -4,6 +4,7 @@ import RecipeDraft from './RecipeDraft.js'
 
 function RecipeMaker ({API}) {
 
+const [newIng, setNewIng] = useState("")
 
 const [newIngInput, setNewIngInput] = useState(false)
 
@@ -38,10 +39,10 @@ const [ingList, setIngList] = useState([{name: "Put Ingredients Here"}])
                     {!newIngInput ? 'New Ingredient' : 'Hide Form' }
                 </button>
                 <br />
-                {newIngInput ? <IngredientAdder ingList={ingList} setIngList={setIngList} /> : null}
+                {newIngInput ? <IngredientAdder setNewIng={setNewIng} newIng={newIng} ingList={ingList} setIngList={setIngList} /> : null}
             </form>
 
-            <RecipeDraft ingList={ingList} recipeTitle={recipeTitle} />
+            <RecipeDraft newIng={newIng} ingList={ingList} recipeTitle={recipeTitle} />
         </div>
     )
 }
