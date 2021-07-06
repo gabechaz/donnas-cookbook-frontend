@@ -20,7 +20,7 @@ function IngredientAdder ({API, ingList, setIngList, newIng, setNewIng}) {
 
 
     function handleNewIng (e) {
-        setNewIng({name: e.target.value})
+        setNewIng(e.target.value)
     }
 
     function handleNewIngSubmit (e) {
