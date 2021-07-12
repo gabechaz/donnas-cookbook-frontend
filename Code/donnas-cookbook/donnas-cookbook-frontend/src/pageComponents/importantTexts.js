@@ -25,4 +25,6 @@ the six actions are as follows(subject to change)
 6. 
 
 
-hold on, this has got me thinking. What if the spots 
+hold on, this has got me thinking. What if the spots on the board led to different decks. You can 
+go either direction on the board, but the board spots are put on erratically so you're basically getting an 
+two options every turn, (with some modifiers of course)
