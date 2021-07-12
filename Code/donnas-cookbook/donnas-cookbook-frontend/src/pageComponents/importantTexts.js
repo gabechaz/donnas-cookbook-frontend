@@ -27,4 +27,9 @@ the six actions are as follows(subject to change)
 
 hold on, this has got me thinking. What if the spots on the board led to different decks. You can 
 go either direction on the board, but the board spots are put on erratically so you're basically getting an 
-two options every turn, (with some modifiers of course)
+two options every turn, (with some modifiers of course) you have say three or four decks that correspond
+to different activities. When you land on a space you draw a card form the associated deck and take that action
+As you take actions you affect what is inside your decks, so its like a multi tiered deck builder
+where you slowly build out the decks of your character as well as getting things like cars and dresses
+and improving the look of your character. Game ends at the prom with a score comparision of all players
+who have made the requisite for making it to prom 
