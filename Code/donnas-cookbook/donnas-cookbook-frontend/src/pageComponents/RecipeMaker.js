@@ -31,6 +31,29 @@ function handleRecipeTitle (e) {
     setRecipeTitle(e.target.value)
 }
 
+function addIngredient(recipeId, ingredientName) {
+    const ingredientObject = {
+        name: ingredientName,
+        recipe_id: recipeId
+    }
+    fetch(`${API}/ingredients`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(ingredientObject)
+    })
+    .then(res => res.json())
+    .then(ingredient => console.log(ingredient))
+}
+
+function addRecipe () {
+const recipeObject ={
+    user_id: 1,
+    name: recipeTitle
+}
+}
+
 
 
     return (
@@ -49,6 +72,8 @@ function handleRecipeTitle (e) {
                 </button>
                 <br />
                 {newIngInput ? <IngredientAdder setNewIng={setNewIng} newIng={newIng} ingList={ingList} setIngList={setIngList} /> : null}
+
+                <button onClick={addRecipe}>Submit Recipe</button>
             </form>
 
             <RecipeDraft newIng={newIng} ingList={ingList} recipeTitle={recipeTitle} />
