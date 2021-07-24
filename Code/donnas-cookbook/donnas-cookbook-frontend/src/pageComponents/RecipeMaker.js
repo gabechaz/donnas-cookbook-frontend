@@ -32,6 +32,7 @@ function handleRecipeTitle (e) {
 }
 
 function addIngredient(recipeId, ingredientName) {
+    console.log(ingredientName)
     const ingredientObject = {
         name: ingredientName,
         recipe_id: recipeId
@@ -44,7 +45,11 @@ function addIngredient(recipeId, ingredientName) {
         body: JSON.stringify(ingredientObject)
     })
     .then(res => res.json())
-    .then(ingredient => console.log(ingredient))
+    .then(ingredient => console.log("ingredient log",ingredient))
+}
+
+function addIngredients (recipeId) {
+    ingList.map(ingredient => addIngredient(recipeId, ingredient.name))
 }
 
 function addRecipe () {
@@ -52,6 +57,15 @@ const recipeObject ={
     user_id: 1,
     name: recipeTitle
 }
+fetch(`${API}/recipes`, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(recipeObject)
+})
+.then(res => res.json())
+.then(recipe => addIngredients(recipe.id))
+
+
 }
 
 
@@ -73,10 +87,11 @@ const recipeObject ={
                 <br />
                 {newIngInput ? <IngredientAdder setNewIng={setNewIng} newIng={newIng} ingList={ingList} setIngList={setIngList} /> : null}
 
-                <button onClick={addRecipe}>Submit Recipe</button>
+  
             </form>
 
             <RecipeDraft newIng={newIng} ingList={ingList} recipeTitle={recipeTitle} />
+            <button onClick={addRecipe}>Submit Recipe</button>
         </div>
     )
 }

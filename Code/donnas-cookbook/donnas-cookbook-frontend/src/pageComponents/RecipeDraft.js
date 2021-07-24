@@ -12,7 +12,7 @@ function RecipeDraft ({recipeTitle, ingList, newIng}) {
     useEffect (() => {
         setIngsList(ingList.map(ing => {
             return (
-                <li>{ing.name}</li>
+                <li key={ing.name}>{ing.name}</li>
             )
         }))
     }
