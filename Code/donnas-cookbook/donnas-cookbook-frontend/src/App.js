@@ -39,7 +39,7 @@ const API = 'http://localhost:3000/'
       </Route>
    
       <Route path="/users/:id" exact>
-        <Profile  />
+        <Profile API={API}  />
       </Route>
 
       <Route path="/recipes/:id" exact>
