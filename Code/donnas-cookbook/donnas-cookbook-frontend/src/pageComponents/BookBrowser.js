@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import UserLi from './UserLi'
 
 function BookBrowser ({API}) {
 
@@ -13,13 +14,11 @@ function BookBrowser ({API}) {
     }, [API])
 
 
-    function goToUserPage (e) {
-        console.log(e.target)
-    }
+
 
     const books = users.map(user => {
         return (
-            <li onClick={goToUserPage} key={user.id}>{user.username}</li>
+            <UserLi  key={user.id} user={user} />
         )
     })
 

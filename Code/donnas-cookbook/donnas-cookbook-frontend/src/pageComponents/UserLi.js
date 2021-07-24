@@ -1,8 +1,19 @@
+import {useHistory} from 'react-router-dom'
+
 function UserLi ({user}) {
+
+    let history = useHistory()
+
+    function goToUserPage () {
+        console.log(user.id)
+        history.push(`/users/${user.id}`)
+    }
+
+
     return (
-        <div>
+        <li onClick={goToUserPage}>
             {user.username}
-        </div>
+        </li>
     )
 }
 
