@@ -15,7 +15,7 @@ useEffect(
         fetch(`${API}/users/${id}`)
         .then(res => res.json())
         .then(user => setThisUser(user))
-    }
+    }, []
 )
 
     return (

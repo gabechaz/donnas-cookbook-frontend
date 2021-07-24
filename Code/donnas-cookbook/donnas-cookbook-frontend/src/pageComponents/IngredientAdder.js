@@ -25,9 +25,8 @@ function IngredientAdder ({API, ingList, setIngList, newIng, setNewIng}) {
 
     function handleNewIngSubmit (e) {
         e.preventDefault()
-        // let list = ingList
-        // list.push(<li>newIng</li>)
-        // setIngList(list)
+        setIngList([...ingList, {name: newIng}])
+        setNewIng("")
         console.log(ingList)
     }
 
