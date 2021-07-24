@@ -2,17 +2,29 @@ import { useEffect, useState } from "react"
 
 function BookBrowser ({API}) {
 
+
+
+    const [users, setUsers] = useState([])
+    
     useEffect(() => {
         fetch(`${API}/users`)
         .then(res => res.json())
-        .then(users => console.log(users))
+        .then(users => setUsers(users))
     }, [API])
 
-    const [users, setUsers] = useState([])
+
+
+    const books = users.map(user => {
+        return (
+            <li>{user.username}</li>
+        )
+    })
+
 
     return (
         <div>
             Book Browser
+            {books}
         </div>
     )
 }

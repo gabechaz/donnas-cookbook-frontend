@@ -6,6 +6,7 @@ import RecipeBrowser from './pageComponents/RecipeBrowser'
 import Profile from './pageComponents/Profile'
 import Recipe from './pageComponents/Recipe'
 import RecipeMaker from  './pageComponents/RecipeMaker'
+import Signup from './pageComponents/Signup'
 
 
 
@@ -27,6 +28,10 @@ const API = 'http://localhost:3000/'
           <h1>Donna's Cookbook!</h1>
 
     <Switch>
+
+      <Route path='/signup'>
+        <Signup API={API} />
+      </Route>
 
 
       <Route path="/books" exact>
