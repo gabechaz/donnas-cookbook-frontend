@@ -13,10 +13,13 @@ function BookBrowser ({API}) {
     }, [API])
 
 
+    function goToUserPage (e) {
+        console.log(e.target)
+    }
 
     const books = users.map(user => {
         return (
-            <li>{user.username}</li>
+            <li onClick={goToUserPage} key={user.id}>{user.username}</li>
         )
     })
 
