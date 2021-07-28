@@ -18,6 +18,14 @@ useEffect(
     }, []
 )
 
+useEffect(() => {
+    fetch(`${API}/books/${id}`)
+    .then(res => res.json())
+    .then(data => console.log(data))
+}
+
+)
+
     return (
         <div>
             <h1>Profile</h1>
