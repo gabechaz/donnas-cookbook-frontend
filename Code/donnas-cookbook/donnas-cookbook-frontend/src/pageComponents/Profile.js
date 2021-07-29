@@ -5,6 +5,8 @@ function Profile ({API}) {
 
 const [thisUser, setThisUser] = useState({username:"Loading", nationality: "Loading"})
 
+const [recipes, setRecipes] = useState(["Loading"])
+
 //Gets id from params so profile component can make a fetch request to get user info
 const {id} = useParams()
 
@@ -21,8 +23,8 @@ useEffect(
 useEffect(() => {
     fetch(`${API}/books/${id}`)
     .then(res => res.json())
-    .then(data => console.log(data))
-}
+    .then(recipes => setRecipes(recipes) )
+}, [{API}]
 
 )
 
