@@ -7,6 +7,10 @@ function RecipeMaker ({API}) {
 //This state variable holds the active new ingredient until it can be added to the recipe draft component
 const [newIng, setNewIng] = useState("")
 
+const [instructionList, setInstructionList] = useState([])
+
+const [instructionLis, setInstructionLis] = useState(null)
+
 //This is a state variable that keeps track of all the ingredients as they are added to the recipe
 //This variable should be an array. T
 const [ingList, setIngList] = useState([])
@@ -86,7 +90,7 @@ fetch(`${API}/recipes`, {
   
             </form>
 
-            <RecipeDraft setNewIng={setNewIng} setIngList={setIngList} newIng={newIng} ingList={ingList} recipeTitle={recipeTitle} />
+            <RecipeDraft instructionList={instructionList} setInstructionList={setInstructionList} instructionLis={instructionLis} setInstructionLis={setInstructionLis} setNewIng={setNewIng} setIngList={setIngList} newIng={newIng} ingList={ingList} recipeTitle={recipeTitle} />
             <button onClick={addRecipe}>Submit Recipe</button>
         </div>
     )

@@ -16,7 +16,7 @@ import {useState} from 'react'
 
 function IngredientAdder ({API, ingList, setIngList, newIng, setNewIng}) {
 
-    console.log(ingList)
+
 
 
     function handleNewIng (e) {
