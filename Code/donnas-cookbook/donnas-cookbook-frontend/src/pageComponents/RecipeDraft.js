@@ -6,7 +6,7 @@ function RecipeDraft ({setNewIng, setIngList, recipeTitle, ingList, newIng}) {
 
     const [ingsList, setIngsList] = useState([])
 
-
+    const [instructionList, setInstructionList] = useState([])
    
     
 
