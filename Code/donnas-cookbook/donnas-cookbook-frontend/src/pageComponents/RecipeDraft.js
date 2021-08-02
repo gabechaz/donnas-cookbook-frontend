@@ -24,11 +24,13 @@ function RecipeDraft ({recipeTitle, ingList, newIng}) {
     return (
         <div>
         <h3>{recipeTitle}</h3>
-        
+            <h4>Ingredients</h4>
             <ul>
             {ingsList}
             </ul>
             <li>{newIng}</li>
+            <h4>Instructions</h4>
+            
         </div>
             
         
