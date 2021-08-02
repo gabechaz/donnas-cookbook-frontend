@@ -1,7 +1,8 @@
 import {useEffect, useState} from 'react'
+import IngredientAdder from './IngredientAdder'
 
 
-function RecipeDraft ({recipeTitle, ingList, newIng}) {
+function RecipeDraft ({setNewIng, setIngList, recipeTitle, ingList, newIng}) {
 
     const [ingsList, setIngsList] = useState([])
 
@@ -25,12 +26,14 @@ function RecipeDraft ({recipeTitle, ingList, newIng}) {
         <div>
         <h3>{recipeTitle}</h3>
             <h4>Ingredients</h4>
+          
             <ul>
+            <IngredientAdder setNewIng={setNewIng} newIng={newIng} ingList={ingList} setIngList={setIngList} /> 
             {ingsList}
             </ul>
             <li>{newIng}</li>
             <h4>Instructions</h4>
-            
+
         </div>
             
         

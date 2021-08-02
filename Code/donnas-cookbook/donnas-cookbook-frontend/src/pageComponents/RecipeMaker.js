@@ -81,16 +81,12 @@ fetch(`${API}/recipes`, {
                 </label>
                 
                 <br />
-                <button onClick = {handleNewIngButton}>
-                    {!newIngInput ? 'New Ingredient' : 'Hide Form' }
-                </button>
-                <br />
-                {newIngInput ? <IngredientAdder setNewIng={setNewIng} newIng={newIng} ingList={ingList} setIngList={setIngList} /> : null}
+      
 
   
             </form>
 
-            <RecipeDraft newIng={newIng} ingList={ingList} recipeTitle={recipeTitle} />
+            <RecipeDraft setNewIng={setNewIng} setIngList={setIngList} newIng={newIng} ingList={ingList} recipeTitle={recipeTitle} />
             <button onClick={addRecipe}>Submit Recipe</button>
         </div>
     )
