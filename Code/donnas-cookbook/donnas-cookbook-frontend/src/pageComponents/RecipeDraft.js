@@ -5,7 +5,7 @@ import InstructionAdder from './InstructionAdder'
 
 function RecipeDraft ({setNewIng, setIngList, recipeTitle, ingList, newIng, instructionList, setInstructionList, instructionLis, setInstructionLis}) {
 
-
+    //fix the ingredient state variable names across all components
     //move all the deconstructed values from recipe maker down to recipe draft, they dont need to be up there
 
 
@@ -20,6 +20,10 @@ function RecipeDraft ({setNewIng, setIngList, recipeTitle, ingList, newIng, inst
         setInstructionList(instructionList.filter(instruction => instruction !== e.target.getAttribute('name')))
     }
 
+    function removeIngredient(e) {
+        setIngList(ingList.filter(ingredient => ingredient.name !== e.target.getAttribute('name') ))
+    }
+ 
     useEffect(() => {
         console.log(instructionList)
         setInstructionLis(instructionList.map(instruction => {
@@ -39,7 +43,11 @@ function RecipeDraft ({setNewIng, setIngList, recipeTitle, ingList, newIng, inst
     useEffect (() => {
         setIngsList(ingList.map(ing => {
             return (
-                <li key={ing.name}>{ing.name}</li>
+                <span>
+                <span key={ing.name}>{ing.name}</span>
+                <button  name={ing.name} onClick={removeIngredient}>Remove Ingredient</button>
+                <br />
+                </span>
             )
         }))
     }
