@@ -16,13 +16,21 @@ function RecipeDraft ({setNewIng, setIngList, recipeTitle, ingList, newIng, inst
 
     const [newInstruction, setNewInstruction] = useState("")
     
+    function removeInstruction(e) {
+        setInstructionList(instructionList.filter(instruction => instruction !== e.target.getAttribute('name')))
+    }
 
     useEffect(() => {
         console.log(instructionList)
-  `      setInstructionLis(instructionList.map(instruction => {
+        setInstructionLis(instructionList.map(instruction => {
             return (
-                <li key={instruction[1]}>{instruction}</li> )
-        }))`
+                <span>
+                    <span key={instruction[1]}>{instruction}</span>
+                    <button name={instruction} onClick={removeInstruction}>Remove Instruction</button>
+                <br />
+                </span>
+                 )
+        }))
        
     }
     ,[instructionList]
