@@ -5,15 +5,17 @@ import RecipeDraft from './RecipeDraft.js'
 function RecipeMaker ({API}) {
 
 //This state variable holds the active new ingredient until it can be added to the recipe draft component
-const [newIng, setNewIng] = useState("")
+const [newIngredient, setNewIngredient] = useState("")
+
+//This is a state variable that keeps track of all the ingredients as they are added to the recipe
+//This variable should be an array. T
+const [ingredientList, setIngredientList] = useState([])
 
 const [instructionList, setInstructionList] = useState([])
 
 const [instructionLis, setInstructionLis] = useState(null)
 
-//This is a state variable that keeps track of all the ingredients as they are added to the recipe
-//This variable should be an array. T
-const [ingList, setIngList] = useState([])
+
 
 const [newIngInput, setNewIngInput] = useState(false)
 
@@ -53,7 +55,7 @@ function addIngredient(recipeId, ingredientName) {
 }
 
 function addIngredients (recipeId) {
-    ingList.map(ingredient => addIngredient(recipeId, ingredient.name))
+    ingredientList.map(ingredient => addIngredient(recipeId, ingredient.name))
 }
 
 function addRecipe () {
@@ -90,7 +92,7 @@ fetch(`${API}/recipes`, {
   
             </form>
 
-            <RecipeDraft instructionList={instructionList} setInstructionList={setInstructionList} instructionLis={instructionLis} setInstructionLis={setInstructionLis} setNewIng={setNewIng} setIngList={setIngList} newIng={newIng} ingList={ingList} recipeTitle={recipeTitle} />
+            <RecipeDraft instructionList={instructionList} setInstructionList={setInstructionList} instructionLis={instructionLis} setInstructionLis={setInstructionLis} setNewIngredient={setNewIngredient} setIngredientList={setIngredientList} newIngredient={newIngredient} ingredientList={ingredientList} recipeTitle={recipeTitle} />
             <button onClick={addRecipe}>Submit Recipe</button>
         </div>
     )
