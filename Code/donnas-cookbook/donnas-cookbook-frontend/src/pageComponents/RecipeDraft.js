@@ -3,10 +3,9 @@ import IngredientAdder from './IngredientAdder'
 import InstructionAdder from './InstructionAdder'
 
 
-function RecipeDraft ({setNewIngredient, setIngredientList, recipeTitle, ingredientList, newIngredient, instructionList, setInstructionList, instructionLis, setInstructionLis}) {
+function RecipeDraft ({setNewIng, setIngList, recipeTitle, ingList, newIng, instructionList, setInstructionList, instructionLis, setInstructionLis}) {
 
 
-    //change the inredientList and ingslist state variable names to look more like instructionList and instruction Lis for consisencty and readability 
     //move all the deconstructed values from recipe maker down to recipe draft, they dont need to be up there
 
 
@@ -18,10 +17,6 @@ function RecipeDraft ({setNewIngredient, setIngredientList, recipeTitle, ingredi
     const [newInstruction, setNewInstruction] = useState("")
     
 
-    function removeIngredient(e) {
-        setIngredientList()
-    }
-
     useEffect(() => {
         console.log(instructionList)
   `      setInstructionLis(instructionList.map(instruction => {
@@ -30,21 +25,17 @@ function RecipeDraft ({setNewIngredient, setIngredientList, recipeTitle, ingredi
         }))`
        
     }
-    ,[instructionList, removeInstruction, setInstructionLis]
+    ,[instructionList]
     )
 
     useEffect (() => {
-        setIngredientList(ingredientList.map(ing => {
+        setIngsList(ingList.map(ing => {
             return (
-                <span>
-                <span key={ing.name}>{ing.name}</span>
-                {/* <button onClick={remove}>Remove Ingredient</button> */}
-                <br />
-                </span>
+                <li key={ing.name}>{ing.name}</li>
             )
         }))
     }
-        , [ingredientList]
+        , [ingList]
     )
 
 
@@ -55,9 +46,9 @@ function RecipeDraft ({setNewIngredient, setIngredientList, recipeTitle, ingredi
             <h4>Ingredients</h4>
           
             <ul>
-            <IngredientAdder setNewIngredient={setNewIngredient} newIngredient={newIngredient} ingredientList={ingredientList} setIngredientList={setIngredientList} /> 
+            <IngredientAdder setNewIng={setNewIng} newIng={newIng} ingList={ingList} setIngList={setIngList} /> 
             {ingsList}
-            <li>{newIngredient}</li>
+            <li>{newIng}</li>
             </ul>
       
             <h4>Instructions</h4>
