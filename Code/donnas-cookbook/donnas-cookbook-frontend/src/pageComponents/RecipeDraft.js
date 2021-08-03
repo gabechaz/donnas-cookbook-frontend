@@ -15,14 +15,24 @@ function RecipeDraft ({setNewIng, setIngList, recipeTitle, ingList, newIng, inst
 
 
     const [newInstruction, setNewInstruction] = useState("")
-    
+
+
+    //This function is an onClick function for the remove-instruction-buttom element adjacent to the instruction li. It uses the jsx att
+    //ribute of name to set the instructionList state variable to a filtered version of itself less any that match the name attribtute from the button
+    function removeInstruction(e) {
+        setInstructionList(instructionList.filter(instruction => instruction !== e.target.getAttribute('name')))
+    }
 
     useEffect(() => {
-        console.log(instructionList)
-  `      setInstructionLis(instructionList.map(instruction => {
+        // console.log(instructionList)
+       setInstructionLis(instructionList.map(instruction => {
             return (
-                <li key={instruction[1]}>{instruction}</li> )
-        }))`
+                <span key={instruction}>
+                <span>{instruction}</span>
+                <button name={instruction} onClick={removeInstruction}>Remove Instruction</button>
+                <br />
+                </span> )
+        }))
        
     }
     ,[instructionList]
