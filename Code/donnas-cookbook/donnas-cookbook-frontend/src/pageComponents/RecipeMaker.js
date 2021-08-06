@@ -53,7 +53,11 @@ function addIngredient(recipeId, ingredientName) {
 }
 
 function addIngredients (recipeId) {
-    ingList.map(ingredient => addIngredient(recipeId, ingredient.name))
+  
+    // ingList.map(ingredient => addIngredient(recipeId, ingredient.name))
+    for (let i = 0; i < ingList.length; i ++) {
+            setTimeout(addIngredient(recipeId, ingList[i].name), 100000)
+    }
 }
 
 function addRecipe () {
@@ -76,6 +80,7 @@ fetch(`${API}/recipes`, {
 
     return (
         <div>
+            <button onClick={addIngredients}button>test</button>
             Recipe Maker
             <br />
             <form>
