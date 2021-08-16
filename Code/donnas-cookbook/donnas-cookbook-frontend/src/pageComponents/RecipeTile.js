@@ -1,6 +1,9 @@
 function RecipeTile ({recipeName}) {
+    console.log(recipeName)
     return (
-        <div>{recipeName}</div>
+        <div>
+        <h3>{recipeName}</h3>
+        </div>
     )
 }
 
