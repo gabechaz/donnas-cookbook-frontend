@@ -43,7 +43,7 @@ const API = 'http://localhost:3000/'
       </Route>
 
       <Route path="/recipe/:id" exact>
-        <Recipe />  
+        <Recipe API={API} />  
       </Route>
 
       <Route path="/recipes/:id">
