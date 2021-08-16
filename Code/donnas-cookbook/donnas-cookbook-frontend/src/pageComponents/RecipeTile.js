@@ -1,5 +1,5 @@
-function RecipeTile ({recipeName}) {
-    console.log(recipeName)
+function RecipeTile ({recipeName, id}) {
+    console.log(id)
     return (
         <div>
         <h3>{recipeName}</h3>

@@ -35,7 +35,7 @@ useEffect(() => {
         setRecipes(recipes)
         setRecipeTiles(recipes.map(recipe => {
             return (
-            <RecipeTile recipeName = {recipe} />
+            <RecipeTile recipeName = {recipe.name} key = {recipe.id} id = {recipe.id} />
             )
         }))
         } )
