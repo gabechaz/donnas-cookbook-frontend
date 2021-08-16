@@ -1,8 +1,16 @@
+import {useHistory} from 'react-router-dom'
+
 function RecipeTile ({recipeName, id}) {
-    console.log(id)
+    
+    const history = useHistory()
+
+    function handleClick(){
+        history.push(`/recipe/${id}`)
+    }
+
     return (
         <div>
-        <h3>{recipeName}</h3>
+        <h3 onClick = {handleClick}>{recipeName}</h3>
         </div>
     )
 }
