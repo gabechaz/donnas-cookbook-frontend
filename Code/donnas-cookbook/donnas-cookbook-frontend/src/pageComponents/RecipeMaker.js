@@ -35,10 +35,11 @@ function handleRecipeTitle (e) {
     setRecipeTitle(e.target.value)
 }
 
-function addInstruction(recipeId, instruction) {
+function addInstruction(recipeId, instruction, next) {
     const instructionObject = {
     recipe_id: recipeId,
-    instruction: instruction
+    instruction: instruction,
+    next: next
     }
     fetch(`${API}/instructions`, {
         method:"POST",
@@ -48,18 +49,24 @@ function addInstruction(recipeId, instruction) {
         body: JSON.stringify(instructionObject)
     })
     .then(res => res.json())
-    .then(instruction => console.log(instruction))
+    .then(instruction => console.log('instruction log',instruction))
 }
 
 function addInstructions(recipeId) {
-    instructionList.map(instruction => addInstruction(recipeId, instruction))
+
+    for (let i = 0; i < instructionList.count; i++) {
+        addInstruction(recipeId, instructionList[i],i)
+    }
+
+
 }
 
 function addIngredient(recipeId, ingredientName) {
     console.log(ingredientName)
     const ingredientObject = {
         name: ingredientName,
-        recipe_id: recipeId
+        recipe_id: recipeId,
+    
     }
     fetch(`${API}/ingredients`, {
         method: "POST",
@@ -76,7 +83,7 @@ function addIngredients (recipeId) {
   
     // ingList.map(ingredient => addIngredient(recipeId, ingredient.name))
     for (let i = 0; i < ingList.length; i ++) {
-            setTimeout(addIngredient(recipeId, ingList[i].name), 30000)
+            setTimeout(addIngredient(recipeId, ingList[i].name), 1)
     }
 }
 
