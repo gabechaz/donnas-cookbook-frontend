@@ -53,9 +53,8 @@ function addInstruction(recipeId, instruction, next) {
     .then(instruction => console.log('instruction log',instruction))
 }
 
-function addInstructions(recipeId) {
-console.log(instructionList.length)
-    for (let i = 0; i < instructionList.length; i++) {
+function addInstructions(recipeId) {    for (let i = 0; i < instructionList.length; i++) {
+
         addInstruction(recipeId, instructionList[i],i)
     }
 
