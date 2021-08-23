@@ -36,6 +36,7 @@ function handleRecipeTitle (e) {
 }
 
 function addInstruction(recipeId, instruction, next) {
+    console.log('adding instruction')
     const instructionObject = {
     recipe_id: recipeId,
     instruction: instruction,
@@ -53,8 +54,8 @@ function addInstruction(recipeId, instruction, next) {
 }
 
 function addInstructions(recipeId) {
-
-    for (let i = 0; i < instructionList.count; i++) {
+console.log(instructionList.length)
+    for (let i = 0; i < instructionList.length; i++) {
         addInstruction(recipeId, instructionList[i],i)
     }
 
