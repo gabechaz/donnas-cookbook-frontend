@@ -1,8 +1,11 @@
 import {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 import IngredientAdder from './IngredientAdder.js'
 import RecipeDraft from './RecipeDraft.js'
 
 function RecipeMaker ({API}) {
+
+const history = useHistory()
 
 //This state variable holds the active new ingredient until it can be added to the recipe draft component
 const [newIng, setNewIng] = useState("")
@@ -100,9 +103,9 @@ fetch(`${API}/recipes`, {
 .then(res => res.json())
 .then(recipe => {
     addInstructions(recipe.id)
-    addIngredients(recipe.id)})
-
-
+    addIngredients(recipe.id)
+    history.push(`/recipe/${recipe.id}`)    
+})
 }
 
 

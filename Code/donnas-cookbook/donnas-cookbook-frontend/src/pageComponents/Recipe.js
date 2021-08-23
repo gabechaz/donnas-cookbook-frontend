@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
+import InstructionAdder from './InstructionAdder'
 
 function Recipe ({API}) {
 
@@ -10,6 +11,10 @@ function Recipe ({API}) {
     const [ingredients, setIngredients] = useState([])
 
     const [ingredientLis, setIngredientLis] = useState(null)
+
+    const [instructions, setInstructions] = useState([])
+
+    const [instructionLis, setInstructionsLis] = useState(null)
 
     useEffect(() => {
         fetch(`${API}/recipes/${id}`)
@@ -28,6 +33,16 @@ function Recipe ({API}) {
     )
 
     useEffect(() => {
+        if (recipe) {
+            setInstructions(recipe.instructions)
+        }
+    }
+    ,[recipe]
+    )
+
+
+
+    useEffect(() => {
         setIngredientLis(ingredients.map(ingredient => {
             return (
                 <li key={ingredient.id}>{ingredient.name}</li>
@@ -35,6 +50,16 @@ function Recipe ({API}) {
         }))
     }
     ,[ingredients]
+    )
+
+    useEffect(() => {
+        setInstructionsLis(instructions.map(instruction => {
+            return (
+                <li key = {instruction.id}>{instruction.instruction}</li>
+            )
+        }))
+    }
+
     )
 
     
@@ -47,6 +72,12 @@ function Recipe ({API}) {
                     <h3>Ingredients</h3>
                     <ul>
                     {ingredientLis}
+                    </ul>
+                    <br />
+
+                    <h3>Instructions</h3>
+                    <ul>
+                        {instructionLis}
                     </ul>
                 </div>
                 : 
