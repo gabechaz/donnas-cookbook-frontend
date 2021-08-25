@@ -6,7 +6,7 @@ function Recipe ({API}) {
 
     const {id} = useParams()
 
-    const [recipe, setRecipe] = useState(null)
+    const [recipe, setRecipe] = useState({ingredients:"Loading"})
 
     const [ingredients, setIngredients] = useState([])
 
@@ -19,40 +19,46 @@ function Recipe ({API}) {
     useEffect(() => {
         fetch(`${API}/recipes/${id}`)
         .then(res => res.json())
-        .then(recipe => setRecipe(recipe))
+        .then(recipe => {
+            setRecipe(recipe)
+        })
+        .then(stuff => {
+            handleIngredientLis()
+            handleInstructionLis()
+        })
     }
     , [API]
     )
 
-    useEffect(() => {
-        if (recipe) {
-            setIngredients(recipe.ingredients)
-        }
-    }
-    , [recipe]
-    )
+    // useEffect(() => {
+    //     if (recipe) {
+    //         setIngredients(recipe.ingredients)
+    //     }
+    // }
+    // , [recipe]
+    // )
 
-    useEffect(() => {
-        if (recipe) {
-            setInstructions(recipe.instructions)
-        }
-    }
-    ,[recipe]
-    )
+    // useEffect(() => {
+    //     if (recipe) {
+    //         setInstructions(recipe.instructions)
+    //     }
+    // }
+    // ,[recipe]
+    // )
 
 
-
-    useEffect(() => {
+    function handleIngredientLis() {
+        setIngredients(recipe.ingredients)
         setIngredientLis(ingredients.map(ingredient => {
             return (
                 <li key={ingredient.id}>{ingredient.name}</li>
             )
         }))
     }
-    ,[ingredients]
-    )
 
-    useEffect(() => {
+
+    function handleInstructionLis() {
+        setInstructions(recipe.instructions)
         setInstructionsLis(instructions.map(instruction => {
             return (
                 <li key = {instruction.id}>{instruction.instruction}</li>
@@ -60,7 +66,7 @@ function Recipe ({API}) {
         }))
     }
 
-    )
+
 
     
 
@@ -71,7 +77,7 @@ function Recipe ({API}) {
                     <h1>{recipe.name}</h1>
                     <h3>Ingredients</h3>
                     <ul>
-                    {ingredientLis}
+                        {ingredientLis}
                     </ul>
                     <br />
 
