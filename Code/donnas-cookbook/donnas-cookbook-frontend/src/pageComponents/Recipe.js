@@ -53,7 +53,6 @@ function Recipe ({API}) {
     }
 
     function handleRecipe(r) {
-        console.log(recipe)
         setRecipe(r)
         handleInstructionLis()
         handleIngredientLis()
@@ -80,6 +79,9 @@ function Recipe ({API}) {
                     <ul>
                         {instructionLis}
                     </ul>
+
+                    <h3>Note</h3>
+                    <p>{recipe.note}</p>
                 </div>
                 : 
                 <h1>Loading</h1>

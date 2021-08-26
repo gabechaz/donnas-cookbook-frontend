@@ -22,7 +22,7 @@ const [newIngInput, setNewIngInput] = useState(false)
 
 const [recipeTitle, setRecipeTitle] = useState("Recipe Title") 
 
-// This page should live update onto what looks like a page in a recipe book
+const [note, setNote] = useState("")
 
 
 //This function toggles whether the input for a new ingredient is visible by using the bang
@@ -36,6 +36,10 @@ setNewIngInput(!newIngInput)
 //This function is an event handler to change the state variable concering the title of the recipe
 function handleRecipeTitle (e) {
     setRecipeTitle(e.target.value)
+}
+
+function handleNote(e) {
+    setNote(e.target.value)
 }
 
 function addInstruction(recipeId, instruction, next) {
@@ -83,8 +87,6 @@ function addIngredient(recipeId, ingredientName) {
 }
 
 function addIngredients (recipeId) {
-  
-    // ingList.map(ingredient => addIngredient(recipeId, ingredient.name))
     for (let i = 0; i < ingList.length; i ++) {
             setTimeout(addIngredient(recipeId, ingList[i].name), 1)
     }
@@ -93,7 +95,8 @@ function addIngredients (recipeId) {
 function addRecipe () {
 const recipeObject ={
     user_id: 1,
-    name: recipeTitle
+    name: recipeTitle,
+    note: note
 }
 fetch(`${API}/recipes`, {
     method: "POST",
@@ -128,6 +131,10 @@ fetch(`${API}/recipes`, {
             </form>
 
             <RecipeDraft instructionList={instructionList} setInstructionList={setInstructionList} instructionLis={instructionLis} setInstructionLis={setInstructionLis} setNewIng={setNewIng} setIngList={setIngList} newIng={newIng} ingList={ingList} recipeTitle={recipeTitle} />
+
+            <h3>Note</h3>
+            <br />
+            <textarea value={note} onChange={handleNote} rows='5' cols = '20' type='text' />
             <button onClick={addRecipe}>Submit Recipe</button>
         </div>
     )

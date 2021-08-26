@@ -74,6 +74,8 @@ function RecipeDraft ({setNewIng, setIngList, recipeTitle, ingList, newIng, inst
                 {instructionLis}
                 <li>{newInstruction}</li>
             </ul>
+            <br />
+
 
 
         </div>
