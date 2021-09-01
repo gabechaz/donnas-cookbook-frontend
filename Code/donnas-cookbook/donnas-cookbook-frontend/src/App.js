@@ -8,6 +8,7 @@ import Profile from './pageComponents/Profile'
 import Recipe from './pageComponents/Recipe'
 import RecipeMaker from  './pageComponents/RecipeMaker'
 import Signup from './pageComponents/Signup'
+import Login from './pageComponents/Login'
 
 
 
@@ -41,6 +42,10 @@ useEffect(() => {
 
       <Route path='/signup'>
         <Signup API={API} currentUser={currentUser} setCurrentUser={setCurrentUser} />
+      </Route>
+
+      <Route path='/login'>
+          <Login API={API} setCurrentUser={setCurrentUser} />
       </Route>
 
 

@@ -2,7 +2,7 @@ import {useState} from 'react'
 
 
 
-function Signup ({API, setCurrentuser, setCurrentuser}) {
+function Signup ({API, setCurrentuser}) {
 
 
     const [username, setUsername] = useState("")
@@ -48,7 +48,7 @@ function Signup ({API, setCurrentuser, setCurrentuser}) {
     })
 }
 
-\
+
 
 
     return (
