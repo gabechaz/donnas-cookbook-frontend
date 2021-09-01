@@ -1,4 +1,5 @@
 
+import { useEffect, useState } from "react"
 import { Switch, Route } from "react-router-dom"
 // import {useState} from 'react'
 import BookBrowser from './pageComponents/BookBrowser'
@@ -17,10 +18,20 @@ function App() {
 
 const API = 'http://localhost:3000/'
 
-    const user = {
-      id: 1,
-      name: "Gabe"
+useEffect(() => {
+  const token = localStorage.getItem("token") 
+  fetch(`${API}/me`, {
+    headers: {
+      Authorization: `Bearer ${token}`
     }
+  })
+    .then((response) => response.json())
+    .then((userData) => { 
+      if (userData?.id)
+      {setCurrentUser(userData)}})
+}, [API])
+
+    const [currentUser, setCurrentUser] = useState(null)
 
   return (
 
