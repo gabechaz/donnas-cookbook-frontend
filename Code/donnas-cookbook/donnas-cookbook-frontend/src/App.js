@@ -40,7 +40,7 @@ useEffect(() => {
     <Switch>
 
       <Route path='/signup'>
-        <Signup API={API} />
+        <Signup API={API} currentUser={currentUser} setCurrentUser={setCurrentUser} />
       </Route>
 
 
