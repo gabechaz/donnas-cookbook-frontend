@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom'
 import IngredientAdder from './IngredientAdder.js'
 import RecipeDraft from './RecipeDraft.js'
 
-function RecipeMaker ({API}) {
+function RecipeMaker ({API, currentUser}) {
 
 const history = useHistory()
 
@@ -94,7 +94,7 @@ function addIngredients (recipeId) {
 
 function addRecipe () {
 const recipeObject ={
-    user_id: 1,
+    user_id: currentUser.id,
     name: recipeTitle,
     note: note
 }

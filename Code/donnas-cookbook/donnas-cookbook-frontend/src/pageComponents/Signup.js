@@ -11,6 +11,12 @@ function Signup ({API}) {
         setUsername(e.target.value)
     }
 
+    const [password, setPassword] = useState("")
+
+    function handlePassword (e) {
+        setPassword(e.target.value)
+    }
+
     const [nationality, setNationality] = useState("")
 
     function handleNationality(e) {
@@ -22,6 +28,7 @@ function Signup ({API}) {
     e.preventDefault()
     const signupObj = {
         username: username,
+        password: password,
         nationality: nationality
     }
 
@@ -46,10 +53,23 @@ function Signup ({API}) {
                 Username
                 <input onChange={handleUsername} type='text'></input>
             </label>
+
+            <br />
+
+            <label>
+                Password
+                <input onChange={handlePassword} type='password'></input>
+            </label>
+
+            <br />
+
             <label>
                 Nationality
                 <input onChange={handleNationality} type='text'></input>
             </label>
+
+            <br />
+
             <button onClick={signup}>
                 Submit
             </button>

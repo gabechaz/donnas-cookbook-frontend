@@ -11,7 +11,6 @@ import Signup from './pageComponents/Signup'
 
 
 
-// Next work on adding ingredients!!!!
 
 
 function App() {
@@ -37,7 +36,7 @@ useEffect(() => {
 
     <div className="App">
           <h1>Donna's Cookbook!</h1>
-
+          {currentUser ? <h1>Logged in</h1> : <h1>Not logged in</h1>}
     <Switch>
 
       <Route path='/signup'>
@@ -62,7 +61,7 @@ useEffect(() => {
       </Route>
 
       <Route path="/recipe-maker">
-        <RecipeMaker API={API} />
+        <RecipeMaker currentUser={currentUser} API={API} />
       </Route>
 
       </Switch>
