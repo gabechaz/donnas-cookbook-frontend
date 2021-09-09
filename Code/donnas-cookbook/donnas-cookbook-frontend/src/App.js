@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import { Switch, Route } from "react-router-dom"
+import { Switch, Route, useHistory } from "react-router-dom"
 // import {useState} from 'react'
 import BookBrowser from './pageComponents/BookBrowser'
 import RecipeBrowser from './pageComponents/RecipeBrowser'
@@ -17,10 +17,21 @@ import NavBox from './pageComponents/NavBox'
 
 function App() {
 
+
+const history = useHistory()
+
 const API = 'http://localhost:3000/'
 
 function logout () {
-  
+  localStorage.removeItem("token")
+  fetch(`${API}/logout`, {
+    method: "POST"
+  })
+  .then(user => {
+    setCurrentUser(null)
+  })
+  history.push('/login')
+
 }
 
 
@@ -46,7 +57,7 @@ useEffect(() => {
           <h1>Donna's Cookbook!</h1>
           {currentUser ? <h1>Logged in</h1> : <h1>Not logged in</h1>}
           <br />
-          <NavBox currentUser={currentUser} />
+          <NavBox logout={logout} currentUser={currentUser} />
     <Switch>
 
       <Route path='/signup'>
