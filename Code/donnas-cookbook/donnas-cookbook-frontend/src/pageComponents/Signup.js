@@ -2,7 +2,7 @@ import {useState} from 'react'
 
 
 
-function Signup ({API, setCurrentuser}) {
+function Signup ({API, setCurrentUser}) {
 
 
     const [username, setUsername] = useState("")
@@ -44,7 +44,7 @@ function Signup ({API, setCurrentuser}) {
     .then(user => {
         console.log(user)
         localStorage.setItem("token", user.token)
-        setCurrentuser(user)
+        setCurrentUser(user)
     })
 }
 

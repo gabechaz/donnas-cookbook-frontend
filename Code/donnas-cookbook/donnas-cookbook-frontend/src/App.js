@@ -9,6 +9,7 @@ import Recipe from './pageComponents/Recipe'
 import RecipeMaker from  './pageComponents/RecipeMaker'
 import Signup from './pageComponents/Signup'
 import Login from './pageComponents/Login'
+import NavBox from './pageComponents/NavBox'
 
 
 
@@ -18,6 +19,8 @@ function App() {
 
 const API = 'http://localhost:3000/'
 
+
+// Live Authentication
 useEffect(() => {
   const token = localStorage.getItem("token") 
   fetch(`${API}/me`, {
@@ -38,6 +41,8 @@ useEffect(() => {
     <div className="App">
           <h1>Donna's Cookbook!</h1>
           {currentUser ? <h1>Logged in</h1> : <h1>Not logged in</h1>}
+          <br />
+          <NavBox currentUser={currentUser} />
     <Switch>
 
       <Route path='/signup'>
