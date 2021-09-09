@@ -19,6 +19,10 @@ function App() {
 
 const API = 'http://localhost:3000/'
 
+function logout () {
+  
+}
+
 
 // Live Authentication
 useEffect(() => {
