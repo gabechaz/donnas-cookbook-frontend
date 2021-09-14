@@ -41,7 +41,7 @@ function Login ({setCurrentUser, API}) {
                 localStorage.setItem("token", user.token)
                 setCurrentUser(user)
                 console.log(user)
-                history.push('/recipe-maker')
+                history.push('/books')
             }
 
         })
