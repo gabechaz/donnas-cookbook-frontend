@@ -2,6 +2,7 @@ import {useHistory} from 'react-router-dom'
 
 function UserLi ({user}) {
 
+    console.log(user)
     let history = useHistory()
 
     function goToUserPage () {
@@ -12,7 +13,7 @@ function UserLi ({user}) {
 
     return (
         <li onClick={goToUserPage}>
-            {user.username}
+            {user.username} {user.recipeCount} Recipes
         </li>
     )
 }

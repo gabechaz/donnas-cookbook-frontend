@@ -105,9 +105,11 @@ fetch(`${API}/recipes`, {
 })
 .then(res => res.json())
 .then(recipe => {
+    console.log('recipe log', recipe)
+    console.log(currentUser.id, "id")
     addInstructions(recipe.id)
     addIngredients(recipe.id)
-    history.push(`/recipe/${recipe.id}`)    
+    // history.push(`/recipe/${recipe.id}`)    
 })
 }
 
