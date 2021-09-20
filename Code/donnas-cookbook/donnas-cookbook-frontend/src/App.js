@@ -24,7 +24,7 @@ const API = 'http://localhost:3000'
 
 function logout () {
   localStorage.removeItem("token")
-  fetch(`${API}/logout`, {
+  fetch(`${API}/users/logout`, {
     method: "POST"
   })
   .then(user => {
@@ -48,8 +48,8 @@ useEffect(() => {
     .then((userData) => { 
       if (userData.id)
       {
-        console.log('me thing')
-        setCurrentUser(userData)}})
+        setCurrentUser(userData)
+        console.log('me thing', currentUser.id)}})
 }, [API])
 
     const [currentUser, setCurrentUser] = useState(null)
@@ -58,7 +58,7 @@ useEffect(() => {
 
     <div className="App">
           <h1>Donna's Cookbook!</h1>
-          {currentUser ? <h1>Logged in</h1> : <h1>Not logged in</h1>}
+          {currentUser ? <h1>Logged in{currentUser.id}</h1> : <h1>Not logged in</h1>}
           <br />
           <NavBox logout={logout} currentUser={currentUser} />
     <Switch>

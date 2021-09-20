@@ -44,7 +44,7 @@ function Signup ({API, setCurrentUser}) {
     .then(user => {
         console.log(user)
         localStorage.setItem("token", user.token)
-        setCurrentUser(user)
+        setCurrentUser(user.user)
     })
 }
 

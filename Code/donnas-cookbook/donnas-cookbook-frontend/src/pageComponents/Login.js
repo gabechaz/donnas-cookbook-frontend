@@ -18,23 +18,26 @@ function Login ({setCurrentUser, API}) {
     }
 
     function handleSubmit (e) {
+         
         e.preventDefault()
 
         const loginObject = {
             username:username,
             password: password
         }
+        console.log(loginObject, 'login')
         fetch(`${API}/users/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                body: JSON.stringify(loginObject)
-            }
+            },
+            body: JSON.stringify(loginObject)
         })
         .then(r => r.json())
         .then(user => {
             if (user.errors) {
                 console.log(user.errors)
+
             }
 
             else {
