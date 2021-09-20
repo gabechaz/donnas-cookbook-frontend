@@ -24,7 +24,7 @@ function Login ({setCurrentUser, API}) {
             username:username,
             password: password
         }
-        fetch(`${API}/login`, {
+        fetch(`${API}/users/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

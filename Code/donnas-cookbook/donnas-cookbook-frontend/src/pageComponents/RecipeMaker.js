@@ -5,6 +5,8 @@ import RecipeDraft from './RecipeDraft.js'
 
 function RecipeMaker ({API, currentUser}) {
 
+    // console.log(currentUser.id, 'maker id')
+
 const history = useHistory()
 
 //This state variable holds the active new ingredient until it can be added to the recipe draft component

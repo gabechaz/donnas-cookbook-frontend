@@ -20,7 +20,7 @@ function App() {
 
 const history = useHistory()
 
-const API = 'http://localhost:3000/'
+const API = 'http://localhost:3000'
 
 function logout () {
   localStorage.removeItem("token")
@@ -38,7 +38,8 @@ function logout () {
 // Live Authentication
 useEffect(() => {
   const token = localStorage.getItem("token") 
-  fetch(`${API}/me`, {
+  fetch(`${API}/users/me`, {
+    method: "POST",
     headers: {
       Authorization: `Bearer ${token}`
     }
@@ -46,7 +47,9 @@ useEffect(() => {
     .then((response) => response.json())
     .then((userData) => { 
       if (userData.id)
-      {setCurrentUser(userData)}})
+      {
+        console.log('me thing')
+        setCurrentUser(userData)}})
 }, [API])
 
     const [currentUser, setCurrentUser] = useState(null)
