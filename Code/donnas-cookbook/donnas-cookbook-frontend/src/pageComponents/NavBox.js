@@ -36,7 +36,7 @@ const history = useHistory()
                 
                 :<div>
                     <p onClick={handleLoginClick}>Log In</p> 
-                    <p>Sign Up</p>
+                    <p onClick={handleSignupClick}>Sign Up</p>
                 </div> 
             }
       
