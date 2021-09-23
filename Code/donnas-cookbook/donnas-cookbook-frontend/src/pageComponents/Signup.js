@@ -23,6 +23,12 @@ function Signup ({API, setCurrentUser}) {
         setNationality(e.target.value)
     }
 
+    const [errors, setErrors] = useState("")
+
+    function handleErrors(errors) {
+        setErrors(errors)
+    }
+
 
     function signup (e) {
     e.preventDefault()
@@ -42,9 +48,15 @@ function Signup ({API, setCurrentUser}) {
     })
     .then(res => res.json())
     .then(user => {
+        if (user.id)
+        {
         console.log(user)
         localStorage.setItem("token", user.token)
         setCurrentUser(user.user)
+        }
+        else {
+            setErrors(user.errors)
+        }
     })
 }
 
@@ -79,6 +91,10 @@ function Signup ({API, setCurrentUser}) {
             <button onClick={signup}>
                 Submit
             </button>
+            <br />
+            <div>
+            {errors}
+            </div>
         </form>
         </div>
     )
