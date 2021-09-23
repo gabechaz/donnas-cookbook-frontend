@@ -49,7 +49,7 @@ useEffect(() => {
       if (userData.id)
       {
         setCurrentUser(userData)
-        console.log('me thing', currentUser.id)}})
+       }})
 }, [API])
 
     const [currentUser, setCurrentUser] = useState(null)
