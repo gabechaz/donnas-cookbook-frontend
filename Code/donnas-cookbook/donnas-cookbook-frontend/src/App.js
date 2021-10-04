@@ -37,7 +37,9 @@ function logout () {
 
 // Live Authentication
 useEffect(() => {
+  console.log(40, 'Im trying')
   const token = localStorage.getItem("token") 
+  console.log(42, token)
   fetch(`${API}/users/me`, {
     method: "POST",
     headers: {
@@ -48,12 +50,16 @@ useEffect(() => {
     .then(userData => { 
       if (userData)
       {
+        console.log('51', 'authenticated')
         setCurrentUser(userData)
-       }})
+       }
+      else {
+        console.log(55, 'not authenticated')
+      }})
 }, [API])
 
     const [currentUser, setCurrentUser] = useState(null)
-
+// console.log(currentUser.id)
   return (
 
     <div className="App">

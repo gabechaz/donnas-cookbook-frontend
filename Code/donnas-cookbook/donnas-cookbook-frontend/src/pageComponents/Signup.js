@@ -1,9 +1,11 @@
 import {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 
 
 
 function Signup ({API, setCurrentUser}) {
 
+    const history = useHistory()
 
     const [username, setUsername] = useState("")
 
@@ -50,9 +52,11 @@ function Signup ({API, setCurrentUser}) {
     .then(user => {
         if (user.id)
         {
+        history.push('/recipe-maker')
         console.log(user)
         localStorage.setItem("token", user.token)
         setCurrentUser(user.user)
+
         }
         else {
             setErrors(user.errors)
@@ -61,10 +65,13 @@ function Signup ({API, setCurrentUser}) {
 }
 
 
-
+function pushTest() {
+    history.push('/books')
+}
 
     return (
         <div>
+            <button onClick={pushTest}>push test</button>
         <h1>Signup</h1>
         <form>
             <label>

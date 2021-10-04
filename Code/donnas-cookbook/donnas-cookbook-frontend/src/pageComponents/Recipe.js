@@ -23,8 +23,9 @@ function Recipe ({API}) {
         .then(res => res.json())
         .then(recipe => {
             setRecipe(recipe)
-            handleIngredientLis(recipe.ingredients)
-            handleInstructionLis(recipe.instructions)
+            console.log(recipe)
+            // handleIngredientLis(recipe.ingredients)
+            // handleInstructionLis(recipe.instructions)
         })
     }
     , [API]
