@@ -84,7 +84,7 @@ function Recipe ({API}) {
                     <p className='note'>{recipe.note}</p>
                 </div>
                 : 
-                <h1>Loading</h1>
+                <h1 className = 'loading-heading'>Loading</h1>
             }
         
         </div>

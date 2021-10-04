@@ -44,9 +44,9 @@ useEffect(() => {
       Authorization: `Bearer ${token}`
     }
   })
-    .then((response) => response.json())
-    .then((userData) => { 
-      if (userData.id)
+    .then(response => response.json())
+    .then(userData => { 
+      if (userData)
       {
         setCurrentUser(userData)
        }})
