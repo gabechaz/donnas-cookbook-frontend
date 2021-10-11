@@ -42,8 +42,8 @@ function Login ({setCurrentUser, API}) {
 
             else {
                 localStorage.setItem("token", user.token)
-                setCurrentUser(user)
-                console.log(user)
+                setCurrentUser(user.user)
+                console.log(user.user)
                 history.push('/books')
             }
 
