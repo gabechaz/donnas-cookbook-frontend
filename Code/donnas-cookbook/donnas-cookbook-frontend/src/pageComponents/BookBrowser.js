@@ -5,6 +5,7 @@ function BookBrowser ({API}) {
 
 
 
+    const [page, setPage] = useState(1)
     const [users, setUsers] = useState([])
     
     useEffect(() => {
