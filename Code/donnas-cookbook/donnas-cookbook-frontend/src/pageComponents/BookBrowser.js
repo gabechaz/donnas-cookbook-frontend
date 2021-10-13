@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react"
-import UserLi from './UserLi'
+import UserLi from './UserDiv'
+import '../css-files/BookBrowser.css'
 
 function BookBrowser ({API}) {
 
 
 
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(0)
     const [users, setUsers] = useState([])
     
     useEffect(() => {
-        fetch(`${API}/users`)
+        fetch(`${API}/users/${page}`)
         .then(res => res.json())
         .then(users => setUsers(users))
-    }, [API])
+    }, [API, page])
 
 
 
@@ -25,10 +26,14 @@ function BookBrowser ({API}) {
 
 
     return (
-        <div>
-            Book Browser
+    <div>
+        <h3>Book Browser</h3>
+        <div className ='books-grid'>
             {books}
         </div>
+        <button onClick = {nextPage}>Next</button>
+          
+    </div>
     )
 }
 

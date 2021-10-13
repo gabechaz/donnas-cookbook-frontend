@@ -10,7 +10,7 @@ import RecipeMaker from  './pageComponents/RecipeMaker'
 import Signup from './pageComponents/Signup'
 import Login from './pageComponents/Login'
 import NavBox from './pageComponents/NavBox'
-import './App.css'
+import './css-files/App.css'
 
 
 

@@ -1,6 +1,7 @@
 import {useHistory} from 'react-router-dom'
+import '../css-files/UserDiv.css'
 
-function UserLi ({user}) {
+function UserDiv ({user}) {
 
     // console.log(user)
     let history = useHistory()
@@ -13,10 +14,10 @@ function UserLi ({user}) {
     // console.log(user.recipeCount, 'recipe count')
 
     return (
-        <li onClick={goToUserPage}>
+        <div className = 'user-div' onClick={goToUserPage}>
             {user.username} {user.recipeCount} Recipes
-        </li>
+        </div>
     )
 }
 
-export default UserLi
+export default UserDiv
