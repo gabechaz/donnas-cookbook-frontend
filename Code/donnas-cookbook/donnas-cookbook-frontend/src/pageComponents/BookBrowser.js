@@ -25,6 +25,17 @@ function BookBrowser ({API}) {
         setPage({count: page.count + 5})
     }
 
+    function previousPage() {
+        if (page.count - 5 < 0) {
+            setPage({count: 0})
+        }
+
+        else {
+            setPage({count: page.count - 5})
+        }
+    
+    }
+
     const books = users.map(user => {
         return (
             <UserLi  key={user.id} user={user} />
@@ -39,6 +50,8 @@ function BookBrowser ({API}) {
             {books}
         </div>
         <button onClick = {nextPage}>Next</button>
+        <br />
+        <button onClick = {previousPage}>Back</button>
           
     </div>
     )
