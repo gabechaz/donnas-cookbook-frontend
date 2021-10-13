@@ -15,7 +15,7 @@ function UserDiv ({user}) {
 
     return (
         <div className = 'user-div' onClick={goToUserPage}>
-            {user.username} {user.recipeCount} Recipes
+            {user.username} {user.recipeCount} Recipes {user.id}
         </div>
     )
 }

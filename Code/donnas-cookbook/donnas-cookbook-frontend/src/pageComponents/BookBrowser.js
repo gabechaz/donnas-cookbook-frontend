@@ -6,17 +6,24 @@ function BookBrowser ({API}) {
 
 
 
-    const [page, setPage] = useState(0)
+    const [page, setPage] = useState({count: 0})
     const [users, setUsers] = useState([])
     
     useEffect(() => {
-        fetch(`${API}/users/${page}`)
+        fetch(`${API}/users/${page}`, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(page)
+        })
         .then(res => res.json())
         .then(users => setUsers(users))
     }, [API, page])
 
 
 
+    function nextPage() {
+        setPage({count: page.count + 5})
+    }
 
     const books = users.map(user => {
         return (
