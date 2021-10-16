@@ -2,6 +2,7 @@ import {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import IngredientAdder from './IngredientAdder.js'
 import RecipeDraft from './RecipeDraft.js'
+import '../css-files/RecipeMaker.css'
 
 function RecipeMaker ({API, currentUser}) {
 
@@ -22,7 +23,7 @@ const [ingList, setIngList] = useState([])
 
 const [newIngInput, setNewIngInput] = useState(false)
 
-const [recipeTitle, setRecipeTitle] = useState("Recipe Title") 
+const [recipeTitle, setRecipeTitle] = useState("Enter Title Here") 
 
 const [note, setNote] = useState("")
 
@@ -118,20 +119,15 @@ fetch(`${API}/recipes`, {
 
 
     return (
-        <div>
-            <button onClick={addIngredients}button>test</button>
+        <div className = 'recipe-maker-container'>
             Recipe Maker
             <br />
-            <form>
-                <label>
-                    Recipe Title:
-                    <input type='text' value = {recipeTitle} onChange={handleRecipeTitle} />
-                </label>
-                
-                <br />
-      
+            <form>    
+              
+                <input className = 'recipe-title' type='text' value = {recipeTitle} onChange={handleRecipeTitle} />  
+               
+            <br />
 
-  
             </form>
 
             <RecipeDraft instructionList={instructionList} setInstructionList={setInstructionList} instructionLis={instructionLis} setInstructionLis={setInstructionLis} setNewIng={setNewIng} setIngList={setIngList} newIng={newIng} ingList={ingList} recipeTitle={recipeTitle} />
