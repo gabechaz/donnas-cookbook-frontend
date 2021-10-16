@@ -7,7 +7,7 @@ function BookBrowser ({API}) {
 
 
     const [page, setPage] = useState({count: 0})
-    const [users, setUsers] = useState([{id=0,}])
+    const [users, setUsers] = useState([{id: 0}])
     
     useEffect(() => {
         fetch(`${API}/users/${page}`, {
