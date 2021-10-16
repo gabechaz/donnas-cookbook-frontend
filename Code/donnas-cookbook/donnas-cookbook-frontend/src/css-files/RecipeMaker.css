@@ -1,0 +1,11 @@
+.recipe-maker-container {
+    background-image: url('../images/page.png') ;
+    background-repeat: no-repeat;
+}
+
+input {
+    height: 50px;
+    color: blue;
+    background-color: black;
+}
+
