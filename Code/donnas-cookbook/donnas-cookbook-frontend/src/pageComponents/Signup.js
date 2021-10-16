@@ -32,7 +32,7 @@ function Signup ({API, setCurrentUser}) {
     }
 
 
-    function signup (e) {
+    function signup(e) {
     e.preventDefault()
     const signupObj = {
         username: username,
@@ -56,6 +56,7 @@ function Signup ({API, setCurrentUser}) {
         console.log(user)
         localStorage.setItem("token", user.token)
         setCurrentUser(user.user)
+        history.push(`/books`)
 
         }
         else {
