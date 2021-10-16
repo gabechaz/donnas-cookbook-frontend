@@ -56,8 +56,12 @@ function Signup ({API, setCurrentUser}) {
         console.log(user)
         localStorage.setItem("token", user.token)
         setCurrentUser(user.user)
+<<<<<<< HEAD
         history.push(`/books`)
 
+=======
+        history.push('/books')
+>>>>>>> 5afd13bdf70c3c4c7c651600c68d2109a9546ffe
         }
         else {
             setErrors(user.errors)
