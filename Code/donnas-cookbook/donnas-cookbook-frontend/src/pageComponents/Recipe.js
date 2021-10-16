@@ -4,8 +4,6 @@ import InstructionAdder from './InstructionAdder'
 
 function Recipe ({API}) {
 
-
-
     const {id} = useParams()
 
     const [recipe, setRecipe] = useState({ingredients:[{name:'loading'}], instructions:[]})
