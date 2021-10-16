@@ -16,7 +16,9 @@ function BookBrowser ({API}) {
             body: JSON.stringify(page)
         })
         .then(res => res.json())
-        .then(users => setUsers(users))
+        .then(users => {
+            console.log(users)
+            setUsers(users)})
     }, [API, page])
 
 
