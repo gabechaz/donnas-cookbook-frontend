@@ -133,7 +133,7 @@ fetch(`${API}/recipes`, {
             
             <h3 className = 'recipe-maker-text'>Note</h3>
             <br/>
-            <textarea className= 'recipe-maker-note' value={note} onChange={handleNote} rows='5' cols = '20' type='text' />
+            <textarea value={note} onChange={handleNote} rows='5' cols = '20' type='text' />
             <br/>
             <button onClick={addRecipe}>Submit Recipe</button>
         </div>

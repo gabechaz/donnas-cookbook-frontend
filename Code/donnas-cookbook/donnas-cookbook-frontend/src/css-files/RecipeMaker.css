@@ -26,12 +26,15 @@
 input {
     height: 50px;
     color: blue;
-    background-color: black;
+    background-color: rgba(255, 255, 255, 0.25);
     text-align: center;
 }
 
 form {
-    text-align: center;
+    /* text-align: center; */
 }
 
+textarea {
+    background-color: rgba(255, 255, 255, 0.25);
+}
 
