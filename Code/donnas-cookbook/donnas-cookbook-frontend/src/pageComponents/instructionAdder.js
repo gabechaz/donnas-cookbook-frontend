@@ -13,6 +13,7 @@ function InstructionAdder({newInstruction, setNewInstruction, instructionList, s
     return (
         <form>
         <input value={newInstruction} onChange={handleNewInstruction}></input>
+        <br /> <br />
         <button onClick={handleInstructionAdd}>Add Instruction</button>
         </form>
     )

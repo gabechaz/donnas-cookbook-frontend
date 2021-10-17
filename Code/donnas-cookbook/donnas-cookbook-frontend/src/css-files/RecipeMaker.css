@@ -1,11 +1,37 @@
 .recipe-maker-container {
     background-image: url('../images/page.png') ;
     background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+
 }
+
+.recipe-maker-text {
+    text-align: center;
+}
+
+.ingredients-list-input {
+    text-align: center;
+}
+
+.ingredients-list {
+    text-align: center;
+}
+
+
+/* .recipe-title {
+    align-items: center;
+} */
 
 input {
     height: 50px;
     color: blue;
     background-color: black;
+    text-align: center;
 }
+
+form {
+    text-align: center;
+}
+
 

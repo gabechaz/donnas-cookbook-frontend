@@ -8,13 +8,19 @@
 
 
 
-* {
+div {
   /* background-color:  #F7FD04; */
-  color: #FC5404;
+  border-color: #FC5404;
   border-style: solid;
 }
 
-button {
+/* h3 {
+  text-align: center;
+} */
+
+
+/* button {
   background-color: #F9B208;
-}
+  text-align: center;
+} */
 

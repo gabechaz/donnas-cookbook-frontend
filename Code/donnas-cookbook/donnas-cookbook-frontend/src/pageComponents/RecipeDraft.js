@@ -30,7 +30,7 @@ function RecipeDraft ({setNewIng, setIngList, ingList, newIng, instructionList, 
             return (
                 <span>
                     <span key={instruction[1]}>{instruction}</span>
-                    <button name={instruction} onClick={removeInstruction}>Remove Instruction</button>
+                    <button name={instruction} onClick={removeInstruction}>x</button>
                 <br />
                 </span>
                  )
@@ -45,7 +45,7 @@ function RecipeDraft ({setNewIng, setIngList, ingList, newIng, instructionList, 
             return (
                 <span>
                 <span key={ing.name}>{ing.name}</span>
-                <button  name={ing.name} onClick={removeIngredient}>Remove Ingredient</button>
+                <button  name={ing.name} onClick={removeIngredient}>x</button>
                 <br />
                 </span>
             )
@@ -57,13 +57,13 @@ function RecipeDraft ({setNewIng, setIngList, ingList, newIng, instructionList, 
 
 
     return (
-        <div>
+        <div className = 'ingredients-list-input'>
             <h4>Ingredients</h4>
           
             <ul>
             <IngredientAdder setNewIng={setNewIng} newIng={newIng} ingList={ingList} setIngList={setIngList} /> 
             {ingsList}
-            <li>{newIng}</li>
+            <p className = 'ingredients-list'>{newIng}</p>
             </ul>
       
             <h4>Instructions</h4>
@@ -71,7 +71,7 @@ function RecipeDraft ({setNewIng, setIngList, ingList, newIng, instructionList, 
             <ul>
           
                 {instructionLis}
-                <li>{newInstruction}</li>
+                <p>{newInstruction}</p>
             </ul>
             <br />
 

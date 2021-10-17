@@ -119,24 +119,25 @@ fetch(`${API}/recipes`, {
 
 
     return (
+        <>
         <div className = 'recipe-maker-container'>
-            Recipe Maker
+            <h1 className = 'recipe-maker-text'>Recipe Maker</h1>
             <br />
             <form>    
               
                 <input className = 'recipe-title' type='text' value = {recipeTitle} onChange={handleRecipeTitle} />  
-               
-            <br />
 
             </form>
-
+            
             <RecipeDraft instructionList={instructionList} setInstructionList={setInstructionList} instructionLis={instructionLis} setInstructionLis={setInstructionLis} setNewIng={setNewIng} setIngList={setIngList} newIng={newIng} ingList={ingList} recipeTitle={recipeTitle} />
-
-            <h3>Note</h3>
-            <br />
-            <textarea value={note} onChange={handleNote} rows='5' cols = '20' type='text' />
+            
+            <h3 className = 'recipe-maker-text'>Note</h3>
+            <br/>
+            <textarea className= 'recipe-maker-note' value={note} onChange={handleNote} rows='5' cols = '20' type='text' />
+            <br/>
             <button onClick={addRecipe}>Submit Recipe</button>
         </div>
+        </>
     )
 }
 
