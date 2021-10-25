@@ -33,10 +33,10 @@ function IngredientAdder ({API, ingList, setIngList, newIng, setNewIng}) {
 
     return (
         <form>
-        <label>
+
         Enter New Ingredient Name
             <input type='text' value={newIng} onChange={handleNewIng} />
-        </label>
+
         <button onClick={handleNewIngSubmit}>Submit</button>
         </form>
  

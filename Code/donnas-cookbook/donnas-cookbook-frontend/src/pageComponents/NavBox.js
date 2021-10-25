@@ -1,4 +1,5 @@
 import {useHistory} from 'react-router-dom'
+import '../css-files/NavBox.css'
 
 
 function NavBox ({currentUser, logout}) {
