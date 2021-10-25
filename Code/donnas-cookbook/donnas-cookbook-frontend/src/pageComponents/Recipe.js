@@ -29,6 +29,9 @@ function Recipe ({API}) {
     , [API]
     )
 
+    function love() {
+        fetch(`API`)
+    }
 
     function handleIngredientLis(ingredients) {
         console.log('ingredients handled')
@@ -81,6 +84,7 @@ function Recipe ({API}) {
 
                     <h3 className='note-heading'>Note</h3>
                     <p className='note'>{recipe.note}</p>
+                    <button onClick={love}>Love</button>
                 </div>
                 : 
                 <h1 className = 'loading-heading'>Loading</h1>
