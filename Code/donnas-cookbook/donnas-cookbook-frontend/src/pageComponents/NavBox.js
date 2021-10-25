@@ -28,9 +28,9 @@ const history = useHistory()
             <h3>Navbox</h3>
             {currentUser ? 
                 <div>
-                <p onClick={logout}>Log Out</p> 
-                <p onClick={handleRecipeMakerClick}>Recipe Maker</p>
-                <p onClick={handleBooksClick}>Recipes</p>
+                <span onClick={logout}>Log Out</span> 
+                <span onClick={handleRecipeMakerClick}>Recipe Maker</span>
+                <span onClick={handleBooksClick}>Recipes</span>
                 
                 </div>
                 
