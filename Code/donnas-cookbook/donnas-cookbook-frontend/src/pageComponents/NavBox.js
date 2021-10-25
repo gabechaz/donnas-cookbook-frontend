@@ -20,6 +20,10 @@ function NavBox ({currentUser, logout}) {
         history.push('/books')
     }
 
+    function handleProfileClick() {
+        history.push(`/users/${currentUser.id}`)
+    }
+
 
 
 const history = useHistory()
@@ -28,9 +32,12 @@ const history = useHistory()
             <h3>Navbox</h3>
             {currentUser ? 
                 <div>
-                <span onClick={logout}>Log Out</span> 
+           
                 <span onClick={handleRecipeMakerClick}>Recipe Maker</span>
                 <span onClick={handleBooksClick}>Recipes</span>
+                <span onClick={handleProfileClick}>Profile</span>
+                <br />
+                <span onClick={logout}>Log Out</span> 
                 
                 </div>
                 
