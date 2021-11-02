@@ -123,7 +123,7 @@ fetch(`${API}/recipes`, {
         <div className = 'recipe-maker-container'>
             <h1 className = 'recipe-maker-text'>Recipe Maker</h1>
             <br />
-            <form>    
+            <form className = 'ingredients-form'>    
               
                 <input className = 'recipe-title' type='text' value = {recipeTitle} onChange={handleRecipeTitle} />  
 

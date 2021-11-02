@@ -14,6 +14,15 @@
     text-align: center;
 }
 
+.recipe-title {
+    text-align: center;
+}
+
+.ingredients-form {
+    text-align: center;
+    display: none;
+}
+
 .ingredients-list {
     text-align: center;
 }

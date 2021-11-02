@@ -65,7 +65,7 @@ useEffect(() => {
 
     <div className="App">
           <h1>Donna's Cookbook!</h1>
-          {currentUser ? <h1>Logged in{currentUser.id}</h1> : <h1>Not logged in</h1>}
+          {currentUser ? <h1>Hi {currentUser.username}!</h1> : <h1>Not logged in</h1>}
           <br />
           <NavBox logout={logout} currentUser={currentUser} />
     <Switch>
