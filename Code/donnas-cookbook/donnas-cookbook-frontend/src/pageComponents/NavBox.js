@@ -55,15 +55,11 @@ const history = useHistory()
   <div class="nav-links">
     <a onClick={logout}>Log Out</a>
     <a onClick={handleRecipeMakerClick}>Recipe Maker</a>
-    <p onClick={handleBooksClick}>Recipes</p>
+    <a onClick={handleBooksClick}>Recipes</a>
+    <a onClick={handleProfileClick}>Profile</a>
   </div>
 
 </div>         
-                <span onClick={handleRecipeMakerClick}>Recipe Maker</span>
-                <span onClick={handleBooksClick}>Recipes</span>
-                <span onClick={handleProfileClick}>Profile</span>
-                <br />
-                <span onClick={logout}>Log Out</span> 
                 
                 </div>
                 
