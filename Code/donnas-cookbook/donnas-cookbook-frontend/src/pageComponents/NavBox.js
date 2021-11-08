@@ -1,4 +1,5 @@
 import {useHistory} from 'react-router-dom'
+import '../css-files/NavBox.css'
 
 
 function NavBox ({currentUser, logout}) {
@@ -19,6 +20,10 @@ function NavBox ({currentUser, logout}) {
         history.push('/books')
     }
 
+    function handleProfileClick() {
+        history.push(`/users/${currentUser.id}`)
+    }
+
 
 
 const history = useHistory()
@@ -27,6 +32,7 @@ const history = useHistory()
             <h3>Navbox</h3>
             {currentUser ? 
                 <div>
+
                 <p onClick={logout}>Log Out</p> 
                 <p onClick={handleRecipeMakerClick}>Recipe Maker</p>
                 <p onClick={handleBooksClick}>Recipes</p>
@@ -48,13 +54,16 @@ const history = useHistory()
   
   <div class="nav-links">
     <a onClick={logout}>Log Out</a>
-    <p onClick={handleRecipeMakerClick}>Recipe Maker</p>
-    <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">LinkedIn</a>
-    <a href="https://codepen.io/jo_Geek/" target="_blank">Codepen</a>
-    <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">JsFiddle</a>
+    <a onClick={handleRecipeMakerClick}>Recipe Maker</a>
+    <p onClick={handleBooksClick}>Recipes</p>
   </div>
 
-</div>
+</div>         
+                <span onClick={handleRecipeMakerClick}>Recipe Maker</span>
+                <span onClick={handleBooksClick}>Recipes</span>
+                <span onClick={handleProfileClick}>Profile</span>
+                <br />
+                <span onClick={logout}>Log Out</span> 
                 
                 </div>
                 
