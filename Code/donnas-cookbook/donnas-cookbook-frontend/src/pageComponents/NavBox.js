@@ -48,7 +48,7 @@ const history = useHistory()
   
   <div class="nav-links">
     <a onClick={logout}>Log Out</a>
-    <a onClick={handleRecipeMakerClick}>Recipe Maker</a>
+    <p onClick={handleRecipeMakerClick}>Recipe Maker</p>
     <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">LinkedIn</a>
     <a href="https://codepen.io/jo_Geek/" target="_blank">Codepen</a>
     <a href="https://jsfiddle.net/user/jo_Geek/" target="_blank">JsFiddle</a>
